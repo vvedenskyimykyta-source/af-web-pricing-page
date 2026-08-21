@@ -54,7 +54,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px;ma
 /* Credits block */
 .plan-credits-block{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:20px}
 .credits-num{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px}
-.credits-annual{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);border:1px solid rgba(5,150,105,.12);border-radius:var(--radius-pill);padding:5px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--green-text);margin-bottom:10px}
+.credits-annual{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);border:1px solid rgba(5,150,105,.12);border-radius:var(--radius-pill);padding:5px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--green-text);margin-top:12px}
 .plan-capacity{font-size:13px;color:var(--text2);line-height:1.7}
 .plan-capacity .cap-line{display:flex;align-items:center;gap:6px}
 .plan-capacity .cap-num{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--text)}
@@ -813,7 +813,6 @@ function renderPlanCards() {
       <div class="plan-name">${plan.name}</div>
       <div class="plan-credits-block">
         <div class="credits-num" id="credits-${i}"></div>
-        <div class="credits-annual" id="credits-yr-${i}"></div>
         <div class="plan-capacity" id="capacity-${i}"></div>
       </div>
       <div class="price-row">
@@ -829,6 +828,7 @@ function renderPlanCards() {
         <button class="seat-btn" id="seat-inc-${i}" onclick="changeSeat(${i},1)">+</button>
       </div>
       <div class="seat-label" id="seat-label-${i}">${plan.includedSeats} seats included</div>
+      <div class="credits-annual" id="credits-yr-${i}"></div>
       <div class="plan-divider"></div>
       <div class="plan-features">
         ${plan.features.map(f => f.heading
